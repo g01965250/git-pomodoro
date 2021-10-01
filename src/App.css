@@ -1,38 +1,433 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.left-wrapper{
+  margin: 50px 0 0 ;
+  background: #E5F3FF ;
+  width: 545px;
+  height: 700px;
+  padding: 0 0 0 58px;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-wrapper{
+  position:relative;
+  width: 346px;
+}
+.input-massion{
+  width: 293px;
+  height: 36px;
+  background: #FFFFFF;
+  border: none;
+  margin: 84px 0 0;
+}
+.addlist{
+  position: absolute;
+  top: 65px;
+  font-size: 20px;
+  right: 65px;
+  color: #00A7FF;
+  padding: 0px 4px 7px 4px;
+}
+.addlist:hover{
+   cursor: pointer; 
+}
+
+.first-todolist-wrapper{
+  display: flex;
+  margin: 94px 0 0 ;
+}
+.check{
+  margin: 0 10px 0 0 ;
+  border: 1px solid #003164;
+  background: #E5F3FF ;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.first-todolist{
+  margin: 0;
+  line-height: 32px;
+  text-align: left;
+  letter-spacing: -0.8px;
+  font-weight: 700;
+  color: #003164;
+}
+
+.time{
+  color: #00A7FF;
+  text-align: left;
+  letter-spacing: 2.26px;
+  font-family: "Bahnschrift";
+  font-size: 116px;
+  margin: 18px 0 75px;
+}
+
+.next-todo-menu{
+  list-style: none;
+  padding-left: 0px;
+}
+.next-todo-list{
+  border-bottom:1px solid #CDDFEF;
+  width: 291px;
+  padding: 8.5px 0;
+  position: relative;
+}
+.next-todo-check{
+  border: 1px solid #003164;
+  background: #E5F3FF ;
+  width: 13px;
+  height: 13px;
+  border-radius: 8px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.next-todo-list .play{
+  position: absolute;
+  right: 0;
+  color: #003164;
+}
+.more{
+  letter-spacing: 0.2px;
+  color: #0AAAFF;
+  text-align: right;
+  font-weight: bold;
+  font-size: 10px;
+  font-family: "Arial";
+  width: 291px;
+  cursor: pointer;
+}
+
+.right-wrapper{
+  width: 293px;
+  background-color: #003164;
+  height: 700px;
+  margin: 50px 0 0 ;
+  position: relative;
+}
+.icon-wrapper{
+  position: absolute;
+  margin-top: 90px;
+  right: 60px;
+
+}
+.right-icon{
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 45px;
+  display: block;
+  cursor: pointer;
+}
+
+.title-wrapper{
+  position: absolute;
+  margin-top: 507px;
+  margin-bottom: 83px;
+  right: 42px;
+  writing-mode: vertical-lr;
+}
+.title-wrapper p{
+  color: #FFFFFF;
+  font-family: Arial;
+  letter-spacing: 0.85px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+
+.left-wrapper > .play , .start{
+  position: absolute;
+  top: 145px;
+  right: -180px;
+  z-index: 10;
+}
+.play-bnt-wrapper{
+  height: 360px;
+  width: 360px;
+  border-radius: 180px;
+  padding: 10px;
+  border: #00A7FF solid 3px;
+  position: relative;
+  background-color: rgba(255,255,255,0);
+}
+.play-bnt{
+  height: 340px;
+  width: 340px;
+  border-radius: 170px;
+  padding: 10px;
+  background-color: #00A7FF;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
+.play-white-bnt{
+  width: 58px;
+  height: 58px;
+  background-color: #FFFFFF;
+  border-radius: 29px;
+  position: absolute;
+  top: 50%;
+  right: 32%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.play-triangle{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 0 12px 20.8px;
+  top: 50%;
+  right: 42%;
+  transform: translate(-50%, -50%);
+  border-color: transparent transparent transparent #00a7FF;
+  position: absolute;
+  z-index: 2;
+}
+
+.play-pause{
+  width: 18px;
+  height: 24px;
+  border-style: solid;
+  border-width: 0px 7px 0px ;
+  top: 47%;
+  right: 46%;
+  position: absolute;
+  background-color:#00A7FF;
+  border-color: #fff;
+  z-index: 2;
+}
+
+.play-point{
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  position: absolute;
+  background-color: #FFFFFF;
+  top: 55%;
+  right: 37%;
+}
+
+
+
+.start .play-bnt{
+  background-color: #fff;
+}
+.start .play-white-bnt{
+  background-color: #00A7FF;
+}
+.start .play-triangle{
+  border-color: #fff;
+}
+.start .play-point{
+  background-color: #00A7FF;
+}
+
+.play{
+  cursor: pointer;
+}
+
+.todolist-page1{
+  width: 838px;
+  height: 628px;
+  background-color: #003164;
+  display: flex;
+}
+
+.page1-title-wrapper{
+  padding: 51.5px 160px 0 61px;
+  position: relative;
+}
+
+.title-icon{
+  margin: 0 9px 0 0 ;
+  color: #00A7FF;
+  font-size: 20px;
+}
+
+.page1-title{
+  display: inline-block;  
+  font: normal normal bold 22px/23px Arial;
+  letter-spacing: 0.22px;
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+.page1-input{
+  margin: 51px 0 0 0;
+}
+
+.page1-addlist{
+  top: 32px;
+}
+
+.list-menu-wrapper{
+  margin: 34px 0 0 ;
+  width: 293px;
+}
+
+.todolist-menu-wrapper,.donelist-menu-wrapper{
+  padding: 0;
+  list-style: none;
+
+}
+.scrollbarStyle{
+  height: 170px;
+  overflow-y: auto;
+}
+
+.scrollbarStyle::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #003164;
+}
+
+.scrollbarStyle::-webkit-scrollbar {
+  width: 6px;
+  background-color: black;
+}
+
+.scrollbarStyle::-webkit-scrollbar-thumb {
+  background-color: #335A83;
+}
+
+.todolist-menu-wrapper .next-todo-check,
+.donelist-menu-wrapper .next-todo-check{
+  background-color: #003164;
+  border: solid 1px #fff;
+  cursor: pointer;
+} 
+
+.menu-title{
+  background-color: #335A83;
+  font: normal normal bold 16px/17px Arial;
+  letter-spacing: 0.32px;
+  color: #FFFFFF;
+  line-height: 27px;
+  margin: 13px 0 3px 0 ;
+  padding: 0 0 0 9px;
+}
+
+.list-menu{
+  margin: 0 0 7.5px 0;
+  font: normal normal bold 9px/10px Arial;
+  letter-spacing: 0.18px;
+  color: #FFFFFF;
+  border-bottom: #1E4976 1px solid;
+  height: 20px;
+  position: relative;
+}
+
+.todolist-menu-wrapper .play,
+.donelist-menu-wrapper .play{
+  position: absolute;
+  right: 0;
+  font-size: 13px;
+} 
+
+.sidebar{
+  position: relative;
+}
+
+.close{
+  font-size: 49px;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 35,31);
+  display: inline-block;
+  color: #fff;
+  cursor: pointer;
+}
+
+.sidebar .title-wrapper{
+  position: absolute;
+  margin-top: 347px;
+  right: -41px;
+  writing-mode: vertical-lr;
+}
+
+.semicircle-wrapper{
+  position: absolute;
+  bottom: 0;
+  left: 36.5px;
+}
+.semicircle{
+  width: 275px;
+  height: 128px;
+  background-color: #E2F5FF;
+  border-radius: 999em 999em 0 0 ;
+  position: relative;
+}
+.semicircle {
+  display:block;
+}
+.smtime{
+  position: absolute;
+  top: 50px;
+  left: 76px;
+  font: normal normal normal 47px/50px Bahnschrift;
+  letter-spacing: 0.94px;
+  color: #00A7FF;
+}
+.list-title{
+  font: normal normal bold 11px/12px Arial;
+  letter-spacing: 0px;
+  color: #003164;
+  position: absolute;
+  bottom: 10px;
+  left: 44.5px;
+}
+
+.smplaybtn{
+  position: absolute;
+  bottom: 162px;
+  left: 130px;
+}
+.smplaybtn-wrapper{
+  position: relative;
+}
+.smplaybtn-border{
+  width: 86px;
+  height: 86px;
+  background-color: #00A7FF;
+  border-radius: 999em;
+  border: #003164 6px solid;
+  position: absolute;
+  z-index: 1;
+}
+.smplay-bnt{
+  width: 72px;
+  height: 72px;
+  background-color: #00A7FF;
+  border-radius: 999em;
+  border: #003164 4px solid;
+  position: absolute;
+  z-index: 1;
+  left: 1px;
+  top: 1px;
+}
+
+.smtriangle{
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13.75px 0 13.75px 19px;
+  border-color: transparent transparent transparent #ffffff;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.none{
+  display: none;
+}
+
+.page1{
+  top: 51px;
 }

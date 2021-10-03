@@ -20,11 +20,12 @@ function Pomodoro (){
 
   const updateData = () =>{
     if(inputValue!==''){
-      setData((prev) => [...prev, {text: inputValue , isComplete: false , time: 900, uuid:_uuid()}]);
+      setData((prev) => [...prev, {text: inputValue , isComplete: false , time: 1500, uuid:_uuid()}]);
       setInputValue('')
     }
   }
-  
+
+
 /*  const finish = (index,item) =>{
  const copydata = data.map((d) => {
       if(d.uuid === item.uuid) {
@@ -64,43 +65,54 @@ function Pomodoro (){
     }
   },[data.isComplete]) */ 
 
+  const enter = (e)=>{
+    let {key} = e
+    if(key==='Enter'){
+      updateData()
+    }
+  }
+  
+
+
+
   return (
     <>
-    <div className={openpage ? "openpage"  : "none"}>
-     <div className="wrapper">
-       <List
-        updateData={updateData}
-        finish={finish}
-        inputValue={inputValue}
-        setInputValue={setInputValue}
-        data={data}
-        setData={setData}
-        current={current}
-        setCurrent={setCurrent}
-        setOpenpage={open}
-        listChange={listChange}
-       />
-       <Other
-        setOpenpage={open}
-       />
-     </div>
-    </div>
-     <div className={openpage ? "none"  : "openpage"}>
-      <div className="wrapper page1">
-       <ListPage
-        updateData={updateData}
-        finish={finish}
-        inputValue={inputValue}
-        setInputValue={setInputValue}
-        data={data}
-        setData={setData}
-        current={current}
-        setCurrent={setCurrent}
-        setOpenpage={open}
-        listChange={listChange}
-       />
+      <div className={openpage ? "openpage"  : "none"}>
+       <div className="wrapper">
+         <List
+          enter={enter}
+          updateData={updateData}
+          finish={finish}
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          data={data}
+          setData={setData}
+          current={current}
+          setCurrent={setCurrent}
+          setOpenpage={open}
+          listChange={listChange}
+         />
+         <Other
+          setOpenpage={open}
+         />
+       </div>
       </div>
-    </div>
+       <div className={openpage ? "none"  : "openpage"}>
+        <div className="wrapper page1">
+         <ListPage
+          updateData={updateData}
+          finish={finish}
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          data={data}
+          setData={setData}
+          current={current}
+          setCurrent={setCurrent}
+          setOpenpage={open}
+          listChange={listChange}
+         />
+        </div>
+      </div>
     </>
   );
 }

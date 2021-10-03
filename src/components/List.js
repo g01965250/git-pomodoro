@@ -80,6 +80,7 @@ function List (props){
             <input className="input-massion"
             onChange={(e)=>props.setInputValue(e.target.value)}
             value={props.inputValue}
+            onKeyDown={props.enter}
             />
             <p className="addlist" onClick={() => {props.updateData(props.data)}}>+</p>
           </div>

@@ -19,7 +19,10 @@ function Pomodoro (){
   }
 
   const updateData = () =>{
-    setData((prev) => [...prev, {text: inputValue , isComplete: false , time: 900, uuid:_uuid()}]);
+    if(inputValue!==''){
+      setData((prev) => [...prev, {text: inputValue , isComplete: false , time: 900, uuid:_uuid()}]);
+      setInputValue('')
+    }
   }
   
 /*  const finish = (index,item) =>{

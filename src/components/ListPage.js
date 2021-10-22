@@ -42,6 +42,7 @@ function ListPage (props) {
         <input className="input-massion page1-input"
         onChange={(e)=>props.setInputValue(e.target.value)}
         value={props.inputValue}
+        placeholder='請輸入代辦事項'
         />
         <p className="addlist page1-addlist" onClick={() => {props.updateData(props.data)}}>+</p>
         <div className="list-menu-wrapper">

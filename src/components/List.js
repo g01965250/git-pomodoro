@@ -81,6 +81,7 @@ function List (props){
             onChange={(e)=>props.setInputValue(e.target.value)}
             value={props.inputValue}
             onKeyDown={props.enter}
+            placeholder='請輸入代辦事項'
             />
             <p className="addlist" onClick={() => {props.updateData(props.data)}}>+</p>
           </div>

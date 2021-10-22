@@ -71,9 +71,6 @@ function Pomodoro (){
       updateData()
     }
   }
-  
-
-
 
   return (
     <>
